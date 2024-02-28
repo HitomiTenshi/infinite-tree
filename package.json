@@ -5,7 +5,7 @@
   "homepage": "https://github.com/cheton/infinite-tree",
   "main": "lib/index.js",
   "scripts": {
-    "prepublish": "npm run lint && npm test && npm run build && npm run dist && npm run stylus && npm run build-examples && npm run release",
+    "prepublishOnly": "npm run lint && npm test && npm run build && npm run dist && npm run stylus && npm run build-examples && npm run release",
     "build": "babel --out-dir ./lib ./src",
     "build-examples": "cd examples; NODE_ENV=production webpack-cli",
     "pack-examples": "npm run build-examples && zip -r examples.zip examples/{dist,vendor,*.html,*.css}",
