@@ -4,6 +4,7 @@
   "description": "A browser-ready tree library that can efficiently display a large amount of data using infinite scrolling.",
   "homepage": "https://github.com/cheton/infinite-tree",
   "main": "lib/index.js",
+  "browser": "dist/infinite-tree.js",
   "scripts": {
     "prepublishOnly": "npm run lint && npm run build && npm run dist && npm run stylus && npm run build-examples && npm run release",
     "build": "babel --out-dir ./lib ./src",
