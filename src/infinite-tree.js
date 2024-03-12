@@ -629,20 +629,18 @@ class InfiniteTree extends events.EventEmitter {
 
                 let checkedCount = 0;
                 let indeterminate = false;
-
                 const len = parentNode.children ? parentNode.children.length : 0;
+
                 for (let i = 0; i < len; ++i) {
                     const childNode = parentNode.children[i];
                     indeterminate = indeterminate || (!!childNode.state.indeterminate);
+
                     if (childNode.state.checked) {
                         checkedCount++;
                     }
                 }
 
-                if (checkedCount === 0) {
-                    parentNode.state.indeterminate = false;
-                    parentNode.state.checked = false;
-                } else if ((checkedCount > 0 && checkedCount < len) || indeterminate) {
+                if (checkedCount === 0 || (checkedCount > 0 && checkedCount < len) || indeterminate) {
                     parentNode.state.indeterminate = true;
                     parentNode.state.checked = true;
                 } else {
